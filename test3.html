@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test App Pranai</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      padding: 5px 20px;
+      box-shadow: 5px 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 1px;
+      margin color: black;
+    }
+
+    .logo {
+      height: 80px; 
+    }
+
+    .left {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      color: #3f51b5;
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+    }
+
+    .profile-text {
+      margin-right: 10px;
+    }
+
+    .profile-img {
+      width: 40px;
+      height: 40px;
+      border-radius: 40%;
+      object-fit: cover;
+    }
+
+    .container {
+      display: flex;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: white;
+      padding: 20px;
+      border-right: 1px solid #ccc;
+      min-height: 100vh;
+    }
+
+    .sidebar h4 {
+      color: #777;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .sidebar a {
+      display: block;
+      margin-bottom: 8px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .sidebar a.red {
+      color: red;
+    }
+
+    .sidebar a.blue {
+      color: #3f51b5;
+    }
+
+    .main {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .main-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    h2 {
+      margin: 0;
+    }
+
+    .full-view-btn,
+    .add-question-btn,
+    .load-more-btn {
+      padding: 8px 16px;
+      background-color: #3f51b5;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .full-view-btn:hover,
+    .add-question-btn:hover,
+    .load-more-btn:hover {
+      background-color: #2f3ea1;
+    }
+
+    .search-box {
+      margin: 15px 2px;
+      width: 500px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .question-box {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .question-item {
+      padding: 12px;
+      border-bottom: 1px solid #eee;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .question-item:hover {
+      background-color: #f0f0f0;
+    }
+
+    .answer {
+      display: none;
+      padding: 10px;
+      background-color: #eef0ff;
+      margin-top: 5px;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .question-item.show-answer + .answer {
+      display: block;
+    }
+
+    .load-more-btn {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="left">
+      <img src="https://fiit-student-task.vercel.app/images/educationimg.png" class="logo" alt="FIIT Logo">
+      <div class="nav-links">
+        <a href="#">Dashboard</a>
+        <a href="#">Question Bank</a>
+        <a href="#">Tests</a>
+        <a href="#">Teachers</a>
+        <a href="#">Classes</a>
+      </div>
+    </div>
+    <div class="right">
+      <span class="profile-text">My Profile</span>
+      <img src="https://images.pexels.com/photos/36478/amazing-beautiful-beauty-blue.jpg?cs=srgb&dl=pexels-pixabay-36478.jpg&fm=jpg" class="profile-img" alt="Profile">
+    </div>
+  </div>
+
+  <!-- Page Body -->
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <button class="add-question-btn">+ Add Question</button>
+
+      <h3>SNAP SHOT</h3>
+      <a href="#">+ New Section</a>
+      <a href="#" class="red">🔴 Section 1</a>
+      <a href="#" class="blue"> 🔵 Section 2</a>
+      <a href="#">Uncategorized (5)</a>
+
+      <h3>TEST INFORMATION</h3>
+      <p>Marks: (16)</p>
+      <p>No. of Q: (16)</p>
+      <p>Neg: (0)</p>
+      <p>Duration: (10)</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+      <div class="main-header">
+        <h2>Test 1 Questions</h2>
+        <button class="full-view-btn">Full View</button>
+      </div>
+
+      <!-- Search Bar  -->
+      <div class="search-box">
+        <input type="text" placeholder="Search questions... ">
+      </div>
+
+      <!-- Questions -->
+      <div class="question-box">
+        <div class="question-item">What is the primary purpose of React in web development?</div>
+        <div class="answer">React builds dynamic UIs using components and updates only what's needed.</div>
+
+        <div class="question-item">What is the result of 5 + 3?</div>
+        <div class="answer">The answer is 8.</div>
+
+        <div class="question-item">Is React a JavaScript library?</div>
+        <div class="answer">Yes, it's a JS library for building user interfaces.</div>
+
+        <div class="question-item">Explain the concept of JSX in React.</div>
+        <div class="answer">JSX lets us write HTML inside JavaScript code.</div>
+
+        <div class="question-item">Define Newton's Second Law of Motion.</div>
+        <div class="answer">It states that F = m × a, force equals mass times acceleration.</div>
+
+        <div class="question-item">What is the square root of 144?</div>
+        <div class="answer">It is 12.</div>
+
+        <div class="question-item">Who developed the Python programming language?</div>
+        <div class="answer">Guido van Rossum created Python.</div>
+
+        <div class="question-item">What is the chemical symbol for Gold?</div>
+        <div class="answer">Gold is represented as Au.</div>
+
+        <div class="question-item">What is the capital of France?</div>
+        <div class="answer">The capital is Paris.</div>
+
+        <div class="question-item">Solve: 15 × 6</div>
+        <div class="answer">The answer is 90.</div>
+
+        <div class="question-item">Explain the concept of Object-Oriented Programming.</div>
+        <div class="answer">OOP organizes code using classes and objects.</div>
+
+        <div class="question-item">What is the function of RAM in a computer?</div>
+        <div class="answer">RAM temporarily stores data for fast access.</div>
+
+        <div class="question-item">Which planet is known as the Red Planet?</div>
+        <div class="answer">Mars is called the Red Planet.</div>
+
+        <div class="question-item">Calculate area of rectangle (10cm × 5cm)</div>
+        <div class="answer">Area = 50 cm².</div>
+
+        <div class="question-item">What is an algorithm?</div>
+        <div class="answer">A step-by-step method to solve a problem.</div>
+
+        <div class="question-item">What does HTML stand for?</div>
+        <div class="answer">HyperText Markup Language.</div>
+      </div>
+
+      <button class="load-more-btn">Load More</button>
+    </div>
+  </div>
+
+  <script>
+    // Toggle answers
+    const questions = document.querySelectorAll('.question-item');
+    questions.forEach(q => {
+      q.addEventListener('click', () => {
+        q.classList.toggle('show-answer');
+      });
+    });
+  </script>
+
+</body>
+</html>

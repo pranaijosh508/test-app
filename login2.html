@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   
+    <title>Document</title>
+    <style>
+        #tit{
+            margin-left: 190px;
+            margin-top: -85px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 40px;
+        }
+
+        #ti{
+            margin-left: 10px;
+            margin-top: 0px;
+
+        }
+        body{
+            background-color: rgba(238, 208, 243, 0.741);
+            margin: 0;
+            height: 700px;
+        }
+        .login{
+            padding: 50px;
+            height: 625px;
+            border: none;
+            display: flex;
+            width: 600px;
+            justify-content: left;
+            align-items: center;
+            flex-direction: column;
+            text-align: left;
+            margin: 0px;
+        }
+        #leftimg{
+            width: 51%;
+            height: 890px;
+            margin-right: 0px;
+            margin-top: -900px;
+            margin-left: 710px;
+            border: none;
+            position: absolute;
+
+        }
+        #wel{
+            margin-left: -80px;
+            margin-top: 100px;
+            font-size: 50px;
+        }
+        .let{
+            
+            
+            height: 220px;
+            color: rgb(0, 0, 0);
+            display: flex;
+            justify-content: left;
+            align-items: left;
+            flex-direction: column;
+            transition: 2s;
+            width: 300px;
+            font-size: 25px;
+            margin-left: -75px;
+        }
+        #pls{
+            margin-left: -175px;
+           
+            font-size: 20px;
+            margin-top: -10px;
+        }
+        .leti{
+            margin-left: 20px;
+            height: 35px;
+            background-color: rgb(144, 142, 139);
+            color: rgb(231, 239, 247);
+        }
+        #pas{
+            font-size: 30px;
+            margin-left:-30px ;
+            
+        }
+     
+        
+    </style>
+</head>
+<body>
+    <img id="ti" src="https://fiit-student-task.vercel.app/images/educationimg.png" width="180px"><h1 id="tit"> FIIT Test App</h1>
+
+
+    <div class="login">
+        <h1 id="wel">Welcome back</h1>
+        <p style="color: rgba(99, 96, 91, 0.881);" id="pls">Please Enter Your Details</p>
+        <form action="login" method="post">
+            <div class="let">
+            Email Address<input style="font-size: 20px; width: 300px;" id="em" type="text" placeholder="abc@gmail.com" required><br>
+            Enter Your Password<input style="font-size: 20px;" id="ps" type="password" placeholder="abc@123" required><br>
+            <span>remember me for 30days <input height="300px" type="checkbox" value="remeber"></div> <a id="pas" href="https://www.jmu.edu/april-fools-got-ya.shtml"></span>forgot password</a>
+            <br> <br>
+            <input type="button" class="leti" value="Sign-in" onclick="redirectToJunnu()">
+
+            
+        </form>
+       
+    
+    </div>
+
+    <img id="leftimg" src="https://img.freepik.com/premium-photo/small-business-owner-woman-near-digital-screen_1177187-143062.jpg?w=360">
+
+    <script>
+       function redirectToJunnu() {
+    const email = document.getElementById("em").value.trim();
+    const password = document.getElementById("ps").value.trim();
+
+    if (email === "" || password === "") {
+      alert("Please fill in both email and password.");
+      return false; // Do not redirect
+    }
+
+    // If both fields are filled
+    window.location.href = "test3.html";
+  }
+    </script>
+
+
+         
+
+</body>
+
+</html>
